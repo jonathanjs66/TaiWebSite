@@ -1,0 +1,250 @@
+:root {
+  --green: #2d5036;
+  --green-dark: #24402c;
+  --cream: #f3ede0;
+  --ink: #232320;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--green);
+}
+
+body {
+  font-family: "Frank Ruhl Libre", serif;
+  color: var(--ink);
+}
+
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+}
+
+.block {
+  padding: 48px 28px;
+}
+
+.block--white {
+  background: #fff;
+  color: var(--ink);
+}
+
+.block--green {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.center {
+  text-align: center;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.logo {
+  width: 46%;
+  max-width: 220px;
+  margin: 0 auto 28px;
+  display: block;
+}
+
+.title-en {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: var(--green);
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+
+.title-en--light {
+  color: var(--cream);
+}
+
+.script {
+  font-family: "Alex Brush", cursive;
+  font-size: 1.9rem;
+  color: var(--green);
+  margin: 0 0 30px;
+}
+
+.script--light {
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.header-dates p {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--green);
+  margin: 6px 0;
+}
+
+.header-dates p:first-child,
+.event-time {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.brunch-line {
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  color: var(--green);
+  line-height: 1.5;
+  margin: 30px 0 10px;
+}
+
+.urn {
+  width: 42%;
+  max-width: 190px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+/* Forest invitation card (image) */
+.forest-card {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Day schedule */
+.day-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--green);
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+.event {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.event-time {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+
+.event-name {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+
+.event-desc {
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+/* Info sections */
+.info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.info-title {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+
+.info-desc {
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+.info-note {
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Important box */
+.important-title {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 0 14px;
+}
+
+.important-desc {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0;
+}
+
+/* Swatches image */
+.swatches {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+/* Tickets / RSVP */
+.price {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin: 26px 0 14px;
+}
+
+.fine-print {
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0 0 26px;
+}
+
+.rsvp-deadline {
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0 0 26px;
+}
+
+.pay-line {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0 0 30px;
+}
+
+.phone-link {
+  color: var(--cream);
+  text-decoration: underline;
+  font-weight: 600;
+  direction: ltr;
+  display: inline-block;
+}
+
+.bank-details p {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
