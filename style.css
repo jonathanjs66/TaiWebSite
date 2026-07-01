@@ -15,6 +15,11 @@ html, body {
   background: var(--green);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
 body {
   font-family: "Frank Ruhl Libre", serif;
   color: var(--ink);
@@ -247,4 +252,98 @@ body {
   font-style: italic;
   font-size: 0.95rem;
   margin: 4px 0;
+}
+
+/* Top nav */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px 18px;
+  transition: transform 0.25s ease;
+}
+
+.topnav--hidden {
+  transform: translateY(-100%);
+}
+
+.hamburger {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--cream);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.navmenu {
+  position: absolute;
+  top: 56px;
+  right: 18px;
+  width: calc(100% - 36px);
+  max-width: 300px;
+  list-style: none;
+  padding: 10px 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.navmenu--open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.navmenu li + li {
+  border-top: 1px solid #eee;
+}
+
+.navmenu a {
+  display: block;
+  padding: 12px 18px;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 1rem;
+  color: var(--green);
+  text-decoration: none;
+  text-align: right;
+}
+
+.navmenu a:active {
+  background: #f5f2ea;
 }

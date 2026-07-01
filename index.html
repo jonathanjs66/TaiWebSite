@@ -11,10 +11,25 @@
 </head>
 <body>
 
+<nav class="topnav" id="topnav">
+  <button class="hamburger" id="hamburgerBtn" aria-label="תפריט" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="navmenu" id="navmenu">
+    <li><a href="#top">ראשי</a></li>
+    <li><a href="#program">סוף השבוע</a></li>
+    <li><a href="#friday">יום שישי</a></li>
+    <li><a href="#saturday">שבת</a></li>
+    <li><a href="#good-to-know">Good to Know</a></li>
+    <li><a href="#dress-code">Dress Code</a></li>
+    <li><a href="#tickets">כרטיסים / אישור הגעה</a></li>
+  </ul>
+</nav>
+
 <div class="page">
 
   <!-- Header -->
-  <section class="block block--white header">
+  <section class="block block--white header" id="top">
     <img class="logo" src="assets/logo.png" alt="Shaked emblem">
     <h1 class="title-en">Shaked 30's Birthday</h1>
     <p class="script">Midsummer Celebration</p>
@@ -38,13 +53,13 @@
   <img class="forest-card" src="assets/forest_card.jpg" alt="הזמנה: אני מזמינה אתכם, האנשים שהיו חלק מהדרך שלי בעשור האחרון, לחגוג איתי רגע מרגש של סיכום עשור ופתיחה של עשור חדש.">
 
   <!-- The Weekend Program -->
-  <section class="block block--green center">
+  <section class="block block--green center" id="program">
     <p class="script script--light">The</p>
     <h2 class="title-en title-en--light">Weekend Program</h2>
   </section>
 
   <!-- Friday -->
-  <section class="block block--white">
+  <section class="block block--white" id="friday">
     <h3 class="day-title">Friday 31/07</h3>
 
     <div class="event">
@@ -79,7 +94,7 @@
   </section>
 
   <!-- Saturday -->
-  <section class="block block--white">
+  <section class="block block--white" id="saturday">
     <h3 class="day-title">Saterday 01/08</h3>
 
     <div class="event">
@@ -106,7 +121,7 @@
   </section>
 
   <!-- Good to Know -->
-  <section class="block block--green center">
+  <section class="block block--green center" id="good-to-know">
     <p class="script script--light">Before You Arrive</p>
     <h2 class="title-en title-en--light">Good to Know</h2>
   </section>
@@ -145,7 +160,7 @@
   </section>
 
   <!-- Dress Code -->
-  <section class="block block--white center">
+  <section class="block block--white center" id="dress-code">
     <p class="script">Need to Know</p>
     <h2 class="title-en">Dress Code</h2>
   </section>
@@ -166,7 +181,7 @@
   <img class="swatches" src="assets/swatches.jpg" alt="פלטת צבעים ובדים מוצעת ללבוש">
 
   <!-- Tickets / RSVP -->
-  <section class="block block--green center">
+  <section class="block block--green center" id="tickets">
     <h2 class="title-en title-en--light">רכישת כרטיסים / אישור הגעה</h2>
 
     <p class="price">מחיר לאדם: 250 ₪</p>
@@ -188,6 +203,42 @@
   </section>
 
 </div>
+
+<script>
+  var nav = document.getElementById('topnav');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var navmenu = document.getElementById('navmenu');
+
+  hamburgerBtn.addEventListener('click', function () {
+    var isOpen = navmenu.classList.toggle('navmenu--open');
+    hamburgerBtn.classList.toggle('hamburger--open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  navmenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navmenu.classList.remove('navmenu--open');
+      hamburgerBtn.classList.remove('hamburger--open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var lastScrollY = window.scrollY;
+  window.addEventListener('scroll', function () {
+    var currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > nav.offsetHeight) {
+      nav.classList.add('topnav--hidden');
+      navmenu.classList.remove('navmenu--open');
+      hamburgerBtn.classList.remove('hamburger--open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      nav.classList.remove('topnav--hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+</script>
 
 </body>
 </html>
